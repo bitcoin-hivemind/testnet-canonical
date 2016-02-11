@@ -20,7 +20,11 @@
   ```
   
 ### To reset your environment and start over with the canonical blockchain data for testing
-1. Make sure that all instances of hivemind (hivemindd, hivemindcli and hivemind-qt) are completely shutdown
+1. Make sure that all instances of hivemind (hivemindd, hivemind-cli and hivemind-qt) are completely shutdown
+  ```
+  ps -aux | grep hivemind
+  ```
+  The above command will list any process on the system with the name hivemind, look for any running daemons or hivemind-qt instances.
 
 2. Remove hivemind's data directory <b>Warning: be careful with the rm command, it will permantely delete files</b> also note that this will remove all transactions, blocks, your configuration files and all of your private keys (coins) which you have created with hivemind.
   ```

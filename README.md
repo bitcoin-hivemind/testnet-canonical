@@ -18,3 +18,13 @@
   ```
   addnode 162.243.37.30 onetry
   ```
+  
+### To reset your environment and start over with the canonical blockchain data for testing
+1. Make sure that all instances of hivemind (hivemindd, hivemindcli and hivemind-qt) are completely shutdown
+
+2. Remove hivemind's data directory <b>Warning: be careful with the rm command, it will permantely delete files</b> also note that this will remove all transactions, blocks, your configuration files and all of your private keys (coins) which you have created with hivemind.
+  ```
+  rm -rf ~/.hivemind/
+  ```
+  
+3. Remove the directory to which you have built hivemind, re download the source code and build it fresh again using the [Fullnode setup guide](https://github.com/bitcoin-hivemind/hivemind/blob/master/doc/fullnode-setup.txt)

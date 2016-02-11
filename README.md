@@ -31,4 +31,6 @@
   rm -rf ~/.hivemind/
   ```
   
-3. Remove the directory to which you have built hivemind, re download the source code and build it fresh again using the [Fullnode setup guide](https://github.com/bitcoin-hivemind/hivemind/blob/master/doc/fullnode-setup.txt)
+3. Remove the directory to which you have built hivemind.
+
+4. re download the source code and build it fresh again using the [Fullnode setup guide](https://github.com/bitcoin-hivemind/hivemind/blob/master/doc/fullnode-setup.txt)

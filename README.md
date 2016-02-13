@@ -38,3 +38,19 @@
 ### Running the testnet seed node (modified to sync a certain number of blocks of data)
 Testnet nodes for bitcoin-hivemind are modified to accept a certain number of blocks, up to nHeight of canonical blockchain data. This is to provide developers a testing environment with examples of hivemind's functions, which is always available in a clean state. Once a developer has synced with the seed node, they can create blocks and share blocks with other nodes that they connect to on the network. If for any reason however, the developer needs to reset the environment they need only erase the data they have added and restore the 'backup' by syncing with the seed node which has remained unchanged.
 
+1. Download the source code and build it using the [Fullnode setup guide](https://github.com/bitcoin-hivemind/hivemind/blob/master/doc/fullnode-setup.txt)
+
+2. Edit your configuration file (~/.hivemind/hivemind.conf) and append the following line
+  ```
+  testnet=1
+  ```
+
+3. Set the block sync limit by either:
+ - Copying the main.cpp file from this repository to replace the main.cpp in your local repository.
+ - Editing main.cpp in your code, adding the following to the AcceptBlock function after line 2754:
+  ```
+  // Don't accept any blocks higher than last block of canonical blockchain data
+  if (nHeight > 300) {
+      return false;
+  }
+  ```

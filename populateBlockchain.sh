@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script will run the commands to create the canonical blockchain for the
+# bitcoin-hivemind project
+
 echo "Populating the testnet blockchain with canonical info"
 
 #########################################
@@ -42,6 +45,13 @@ echo "Creating branches"
 #        "\n7. scaled min          (if scaled, numeric)"
 #        "\n8. scaled max          (if scaled, numeric)";
 echo "Creating decisions"
+./src/hivemind-cli createdecision 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 0f894a25c5e0318ee148fe54600ebbf50782f0a1df1eb2aab06321a8ccec270d 'Will Barack Obama win US President in 2012?' 333 true true
+./src/hivemind-cli createdecision 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 0f894a25c5e0318ee148fe54600ebbf50782f0a1df1eb2aab06321a8ccec270d 'Will US FED abandon ZIRP, at any time in 2012?' 333 true true
+./src/hivemind-cli createdecision 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 0f894a25c5e0318ee148fe54600ebbf50782f0a1df1eb2aab06321a8ccec270d 'Will Jeff Immelt have been replaced, as CEO of GE, by Jan 1, 2013?' 333 true true
+./src/hivemind-cli createdecision 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 0f894a25c5e0318ee148fe54600ebbf50782f0a1df1eb2aab06321a8ccec270d 'US U-3 Unemployment Rate, in Dec 2012, latest revision, in % [3.0, 15.0] ?' 333 true true
+./src/hivemind-cli createdecision 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 0f894a25c5e0318ee148fe54600ebbf50782f0a1df1eb2aab06321a8ccec270d 'Global surface temperature anomaly, cumulative, reported by NASA, for year 2012 (J-D), in Celsius [ 0.3, 0.9 ] ?' 333 true true
+./src/hivemind-cli createdecision 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 0f894a25c5e0318ee148fe54600ebbf50782f0a1df1eb2aab06321a8ccec270d 'Bitcoin exchange rate as reported by CoinDesk BPI, Jan 8th, 2012, in
+USD [0.50, 50.00] ?' 333 true true
 
 #########################################
 # Create markets
@@ -68,6 +78,12 @@ echo "Creating decisions"
 #        "\n    :X3   X^3"
 #        "\n    :LNX  LN(X)";
 echo "Creating markets"
+./src/hivemind-cli createmarket 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 629ff3dc9b8c527c3aa3bc52cd59f622f48501a42fac1f3a582df74da161a31b:X1 0.1 0.1 0.1 "Title" "Description" "tags" 400 0 1
+./src/hivemind-cli createmarket 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 629ff3dc9b8c527c3aa3bc52cd59f622f48501a42fac1f3a582df74da161a31b:X1 0.1 0.1 0.1 "Title" "Description" "tags" 400 0 1
+./src/hivemind-cli createmarket 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 629ff3dc9b8c527c3aa3bc52cd59f622f48501a42fac1f3a582df74da161a31b:X1 0.1 0.1 0.1 "Title" "Description" "tags" 400 0 1
+./src/hivemind-cli createmarket 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 629ff3dc9b8c527c3aa3bc52cd59f622f48501a42fac1f3a582df74da161a31b:X1 0.1 0.1 0.1 "Title" "Description" "tags" 400 0 1
+./src/hivemind-cli createmarket 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 629ff3dc9b8c527c3aa3bc52cd59f622f48501a42fac1f3a582df74da161a31b:X1 0.1 0.1 0.1 "Title" "Description" "tags" 400 0 1
+./src/hivemind-cli createmarket 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 629ff3dc9b8c527c3aa3bc52cd59f622f48501a42fac1f3a582df74da161a31b:X1 0.1 0.1 0.1 "Title" "Description" "tags" 400 0 1
 
 #########################################
 # Create trades
@@ -86,3 +102,15 @@ echo "Creating markets"
 #        "\n"
 #        "\nNote: for repeated trades, increase the nonce.";
 echo "Creating trades"
+./src/hivemind-cli createtrade 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
+./src/hivemind-cli createtrade 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
+./src/hivemind-cli createtrade 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
+./src/hivemind-cli createtrade 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
+./src/hivemind-cli createtrade 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
+./src/hivemind-cli createtrade 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
+./src/hivemind-cli createtrade 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
+./src/hivemind-cli createtrade 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
+./src/hivemind-cli createtrade 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
+./src/hivemind-cli createtrade 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
+./src/hivemind-cli createtrade 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
+./src/hivemind-cli createtrade 1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0

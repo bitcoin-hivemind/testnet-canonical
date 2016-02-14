@@ -54,3 +54,9 @@ Testnet nodes for bitcoin-hivemind are modified to accept a certain number of bl
       return false;
   }
   ```
+4. Copy the canonical blockchain data (hivemindcanonical.dat) from this repository into your ~/.hivemind folder
+
+5. Start the hivemindd daemon with the -rescan option
+  ```
+  ./src/hivemindd -rescan
+  ```

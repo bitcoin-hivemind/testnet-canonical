@@ -18,7 +18,7 @@
   ```
   addnode 162.243.37.30 onetry
   ```
-  
+
 ### Reseting your environment, how to start over with the canonical blockchain data for testing:
 1. Make sure that all instances of hivemind (hivemindd, hivemind-cli and hivemind-qt) are completely shutdown
   ```
@@ -30,7 +30,7 @@
   ```
   rm -rf ~/.hivemind/
   ```
-  
+
 3. Remove the directory to which you have built hivemind.
 
 4. Re-download the source code and build it fresh again using the [Fullnode setup guide](https://github.com/bitcoin-hivemind/hivemind/blob/master/doc/fullnode-setup.txt)
@@ -54,7 +54,12 @@ Testnet nodes for bitcoin-hivemind are modified to accept a certain number of bl
       return false;
   }
   ```
-4. Copy the canonical blockchain data (hivemindcanonical.dat) from this repository into your ~/.hivemind folder
+4. Copy the canonical blockchain data (blocks/blocks.tar.gz) from this repository into your ~/.hivemind/testnet folder
+
+5. Extract the contents of the blocks archive inside of the testnet directory:
+  ```
+  tar -xvzf blocks.tar.gz
+  ```
 
 5. Start the hivemindd daemon with the -rescan option
   ```

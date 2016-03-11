@@ -1,10 +1,6 @@
 # testnet-canonical
 
 ## This repository is the starting point for anyone wanting to connect to the testnet and start testing / working on the bitcoin-hivemind project.
-+ Instructions for developers and testers
-+ Modified testnet seeder (syncs only to the last canonical block height)
-+ Script to generate canonical blockchain data using the hivemind-cli
-+ Backups of the canonical blockchain(s)
 
 ### Starting development / testing (environment setup and building):
 1. You may use the following guide to setup a remote node, or follow the instructions on a virtual machine / your local system: [Fullnode setup guide](https://github.com/bitcoin-hivemind/hivemind/blob/master/doc/fullnode-setup.txt)

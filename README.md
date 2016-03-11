@@ -31,8 +31,8 @@
 
 4. Re-download the source code and build it fresh again using the [Fullnode setup guide](https://github.com/bitcoin-hivemind/hivemind/blob/master/doc/fullnode-setup.txt)
 
-### Running the testnet seed node (modified to sync a certain number of blocks of data)
-Testnet nodes for bitcoin-hivemind are modified to accept a certain number of blocks, up to nHeight of canonical blockchain data. This is to provide developers a testing environment with examples of hivemind's functions, which is always available in a clean state. Once a developer has synced with the seed node, they can create blocks and share blocks with other nodes that they connect to on the network. If for any reason however, the developer needs to reset the environment they need only erase the data they have added and restore the 'backup' by syncing with the seed node which has remained unchanged.
+### Running a testnet sync node (modified to sync a certain number of blocks of data)
+Testnet sync nodes for bitcoin-hivemind are full nodes modified to accept a certain number of blocks, up to nHeight of canonical blockchain data. This is to provide developers a testing environment with examples of hivemind's functions, which is always available in a clean state. Once a developer has synced with the seed node, they can create blocks and share blocks with other nodes that they connect to on the network. If for any reason however, the developer needs to reset the environment they need only erase the data they have added and restore the 'backup' by syncing with the seed node which has remained unchanged.
 
 1. Download the source code and build it using the [Fullnode setup guide](https://github.com/bitcoin-hivemind/hivemind/blob/master/doc/fullnode-setup.txt)
 

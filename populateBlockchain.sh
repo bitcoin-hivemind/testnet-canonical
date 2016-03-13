@@ -54,27 +54,33 @@ echo "Creating branches"
 #        "\n7. scaled min          (if scaled, numeric)"
 #        "\n8. scaled max          (if scaled, numeric)";
 echo "Creating decisions"
-DECISIONA=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will Barack Obama win US President in 2012?' 333 true false`
+DECISIONA=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will Barack Obama win US President in 2012?' 333 false false`
 DECISIONA=`echo $DECISIONA | jq '.decisionid'`
-echo "Decision 1: $DECISIONA"
+echo "Decision A: $DECISIONA"
 
-DECISIONB=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will US FED abandon ZIRP, at any time in 2012?' 333 true true`
+DECISIONB=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will US FED abandon ZIRP, at any time in 2012?' 333 false false`
 DECISIONB=`echo $DECISIONB | jq '.decisionid'`
+echo "Decision B: $DECISIONB"
 
-DECISIONC=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will Jeff Immelt have been replaced, as CEO of GE, by Jan 1, 2013?' 333 true true`
+DECISIONC=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will Jeff Immelt have been replaced, as CEO of GE, by Jan 1, 2013?' 333 false false`
 DECISIONC=`echo $DECISIONC | jq '.decisionid'`
+echo "Decision C: $DECISIONC"
 
-DECISIOND=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'US U-3 Unemployment Rate, in Dec 2012, latest revision, in % [3.0, 15.0] ?' 333 true true`
+DECISIOND=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'US U-3 Unemployment Rate, in Dec 2012, latest revision, in % [3.0, 15.0] ?' 333 false true 3 15`
 DECISIOND=`echo $DECISIOND | jq '.decisionid'`
+echo "Decision D: $DECISIOND"
 
-DECISIONE=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Global surface temperature anomaly, cumulative, reported by NASA, for year 2012 (J-D), in Celsius [ 0.3, 0.9 ] ?' 333 true true`
+DECISIONE=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Global surface temperature anomaly, cumulative, reported by NASA, for year 2012 (J-D), in Celsius [ 0.3, 0.9 ] ?' 333 false true 0.3 0.9`
 DECISIONE=`echo $DECISIONE | jq '.decisionid'`
+echo "Decision E: $DECISIONE"
 
-DECISIONF=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Stock price of GE, Jan 1, 2013, closing, in USD [1, 100]?'`
+DECISIONF=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Stock price of GE, Jan 1, 2013, closing, in USD [1, 100]?' false true 1 100`
 DECISIONF=`echo $DECISIONF | jq '.decisionid'`
+echo "Decision F: $DECISIONF"
 
-DECISIONG=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Bitcoin exchange rate as reported by CoinDesk BPI, Jan 8th, 2012, in USD [0.50, 50.00] ?' 333 true true`
+DECISIONG=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Bitcoin exchange rate as reported by CoinDesk BPI, Jan 8th, 2012, in USD [0.50, 50.00] ?' 333 false true 0.50, 50.00`
 DECISIONG=`echo $DECISIONG | jq '.decisionid'`
+echo "Decision G: $DECISIONG"
 
 #########################################
 # Create markets

@@ -74,7 +74,7 @@ DECISIONE=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Global surfac
 DECISIONE=`echo $DECISIONE | jq '.decisionid'`
 echo "Decision E: $DECISIONE"
 
-DECISIONF=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Stock price of GE, Jan 1, 2013, closing, in USD [1, 100]?' false true 1 100`
+DECISIONF=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Stock price of GE, Jan 1, 2013, closing, in USD [1, 100]?' 333 false true 1 100`
 DECISIONF=`echo $DECISIONF | jq '.decisionid'`
 echo "Decision F: $DECISIONF"
 
@@ -108,11 +108,23 @@ echo "Decision G: $DECISIONG"
 #        "\n    :LNX  LN(X)";
 echo "Creating markets"
 MARKET1=`./src/hivemind-cli createmarket $ADDRESS $DECISIONA:X1 0.1 0.1 0.1 "Presidential Election" "Marketed based on Presidential Election" "tags" 400 0 1`
+MARKET1=`echo $MARKET1 | jq '.marketid'`
+echo "Market 1: $MARKET1"
 MARKET2=`./src/hivemind-cli createmarket $ADDRESS $DECISIONE:X1 0.1 0.1 0.1 "Global warming health indicator" "Market to serve as a meter of global warming health" "tags" 400 0 1`
+MARKET2=`echo $MARKET2 | jq '.marketid'`
+echo "Market 2: $MARKET2"
 MARKET3=`./src/hivemind-cli createmarket $ADDRESS $DECISIONA:X1,$DECISIONG:X1 0.1 0.1 0.1 "InTrade simulator, USD election betting" "USD election betting" "tags" 400 0 1`
+MARKET3=`echo $MARKET3 | jq '.marketid'`
+echo "Market 3: $MARKET3"
 MARKET4=`./src/hivemind-cli createmarket $ADDRESS $DECISIONA:X1,$DECISIONB:X1,$DECISIOND:X1 0.1 0.1 0.1 "Unemployment drivers" "Market on unemployment" "tags" 400 0 1`
+MARKET4=`echo $MARKET4 | jq '.marketid'`
+echo "Market 4: $MARKET4"
 MARKET5=`./src/hivemind-cli createmarket $ADDRESS $DECISIOND:X1,$DECISIOND:X2 0.1 0.1 0.1 "Unemployment standard deviation" "Market on unemployment standard deviation" "tags" 400 0 1`
+MARKET5=`echo $MARKET5 | jq '.marketid'`
+echo "Market 5: $MARKET5"
 MARKET6=`./src/hivemind-cli createmarket $ADDRESS $DECISIONC:X1,$DECISIONF:LNX 0.1 0.1 0.1 "Fire Immelt?" "Market on the employment of GE CEO Immelt" "tags" 400 0 1`
+MARKET6=`echo $MARKET6 | jq '.marketid'`
+echo "Market 6: $MARKET6"
 
 #########################################
 # Create trades

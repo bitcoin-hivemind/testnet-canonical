@@ -6,6 +6,8 @@
 # NOTE:
 # You may need to install the jq package for parsing json, install it using
 # your package manager ex: apt-get update && apt-get install jq
+#
+# TODO: loops & arrays
 
 
 ADDRESS='1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC'
@@ -52,16 +54,27 @@ echo "Creating branches"
 #        "\n7. scaled min          (if scaled, numeric)"
 #        "\n8. scaled max          (if scaled, numeric)";
 echo "Creating decisions"
-DECISION1=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will Barack Obama win US President in 2012?' 333 true false`
-DECISION1=`echo $DECISION1 | jq '.decisionid'`
-echo "Decision 1: $DECISION1"
+DECISIONA=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will Barack Obama win US President in 2012?' 333 true false`
+DECISIONA=`echo $DECISIONA | jq '.decisionid'`
+echo "Decision 1: $DECISIONA"
 
-./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will US FED abandon ZIRP, at any time in 2012?' 333 true true
-./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will Jeff Immelt have been replaced, as CEO of GE, by Jan 1, 2013?' 333 true true
-./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'US U-3 Unemployment Rate, in Dec 2012, latest revision, in % [3.0, 15.0] ?' 333 true true
-./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Global surface temperature anomaly, cumulative, reported by NASA, for year 2012 (J-D), in Celsius [ 0.3, 0.9 ] ?' 333 true true
-./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Bitcoin exchange rate as reported by CoinDesk BPI, Jan 8th, 2012, in
-USD [0.50, 50.00] ?' 333 true true
+DECISIONB=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will US FED abandon ZIRP, at any time in 2012?' 333 true true`
+DECISIONB=`echo $DECISIONB | jq '.decisionid'`
+
+DECISIONC=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will Jeff Immelt have been replaced, as CEO of GE, by Jan 1, 2013?' 333 true true`
+DECISIONC=`echo $DECISIONC | jq '.decisionid'`
+
+DECISIOND=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'US U-3 Unemployment Rate, in Dec 2012, latest revision, in % [3.0, 15.0] ?' 333 true true`
+DECISIOND=`echo $DECISIOND | jq '.decisionid'`
+
+DECISIONE=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Global surface temperature anomaly, cumulative, reported by NASA, for year 2012 (J-D), in Celsius [ 0.3, 0.9 ] ?' 333 true true`
+DECISIONE=`echo $DECISIONE | jq '.decisionid'`
+
+DECISIONF=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Stock price of GE, Jan 1, 2013, closing, in USD [1, 100]?'`
+DECISIONF=`echo $DECISIONF | jq '.decisionid'`
+
+DECISIONG=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Bitcoin exchange rate as reported by CoinDesk BPI, Jan 8th, 2012, in USD [0.50, 50.00] ?' 333 true true`
+DECISIONG=`echo $DECISIONG | jq '.decisionid'`
 
 #########################################
 # Create markets
@@ -88,12 +101,12 @@ USD [0.50, 50.00] ?' 333 true true
 #        "\n    :X3   X^3"
 #        "\n    :LNX  LN(X)";
 echo "Creating markets"
-./src/hivemind-cli createmarket $ADDRESS 629ff3dc9b8c527c3aa3bc52cd59f622f48501a42fac1f3a582df74da161a31b:X1 0.1 0.1 0.1 "Title" "Description" "tags" 400 0 1
-./src/hivemind-cli createmarket $ADDRESS 629ff3dc9b8c527c3aa3bc52cd59f622f48501a42fac1f3a582df74da161a31b:X1 0.1 0.1 0.1 "Title" "Description" "tags" 400 0 1
-./src/hivemind-cli createmarket $ADDRESS 629ff3dc9b8c527c3aa3bc52cd59f622f48501a42fac1f3a582df74da161a31b:X1 0.1 0.1 0.1 "Title" "Description" "tags" 400 0 1
-./src/hivemind-cli createmarket $ADDRESS 629ff3dc9b8c527c3aa3bc52cd59f622f48501a42fac1f3a582df74da161a31b:X1 0.1 0.1 0.1 "Title" "Description" "tags" 400 0 1
-./src/hivemind-cli createmarket $ADDRESS 629ff3dc9b8c527c3aa3bc52cd59f622f48501a42fac1f3a582df74da161a31b:X1 0.1 0.1 0.1 "Title" "Description" "tags" 400 0 1
-./src/hivemind-cli createmarket $ADDRESS 629ff3dc9b8c527c3aa3bc52cd59f622f48501a42fac1f3a582df74da161a31b:X1 0.1 0.1 0.1 "Title" "Description" "tags" 400 0 1
+MARKET1=`./src/hivemind-cli createmarket $ADDRESS $DECISIONA:X1 0.1 0.1 0.1 "Presidential Election" "Marketed based on Presidential Election" "tags" 400 0 1`
+MARKET2=`./src/hivemind-cli createmarket $ADDRESS $DECISIONE:X1 0.1 0.1 0.1 "Global warming health indicator" "Market to serve as a meter of global warming health" "tags" 400 0 1`
+MARKET3=`./src/hivemind-cli createmarket $ADDRESS $DECISIONA:X1,$DECISIONG:X1 0.1 0.1 0.1 "InTrade simulator, USD election betting" "USD election betting" "tags" 400 0 1`
+MARKET4=`./src/hivemind-cli createmarket $ADDRESS $DECISIONA:X1,$DECISIONB:X1,$DECISIOND:X1 0.1 0.1 0.1 "Unemployment drivers" "Market on unemployment" "tags" 400 0 1`
+MARKET5=`./src/hivemind-cli createmarket $ADDRESS $DECISIOND:X1,$DECISIOND:X2 0.1 0.1 0.1 "Unemployment standard deviation" "Market on unemployment standard deviation" "tags" 400 0 1`
+MARKET6=`./src/hivemind-cli createmarket $ADDRESS $DECISIONC:X1,$DECISIONF:LNX 0.1 0.1 0.1 "Fire Immelt?" "Market on the employment of GE CEO Immelt" "tags" 400 0 1`
 
 #########################################
 # Create trades

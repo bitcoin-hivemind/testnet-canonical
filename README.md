@@ -5,7 +5,10 @@
 ### Starting development / testing (environment setup and building):
 1. You may use the following guide to setup a remote node, or follow the instructions on a virtual machine / your local system: [Fullnode setup guide](https://github.com/bitcoin-hivemind/hivemind/blob/master/doc/fullnode-setup.txt)
 
-2. Edit your configuration file (~/.hivemind/hivemind.conf) and append the following line
+2. Edit your configuration file;
+Linux: ```~/.hivemind/hivemind.conf```
+Windows: ```%APPDATA%\hivemind\  Ex: C:\Users\username\AppData\Roaming\Hivemind\hivemind.conf```
+and append the following line:
   ```
   testnet=1
   ```

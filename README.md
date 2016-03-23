@@ -46,7 +46,7 @@ Testnet sync nodes for bitcoin-hivemind are full nodes modified to accept a cert
 
 3. Set the block sync limit by either:
  - Copying the main.cpp file from this repository to replace the main.cpp in your local repository.
- - Editing main.cpp in your code, adding the following to the AcceptBlock function after line 2754:
+ - Editing main.cpp in your code, adding the following to the AcceptBlock function after line 2751:
   ```
   // Don't accept any blocks higher than last block of canonical blockchain data
   if (nHeight > 300) {

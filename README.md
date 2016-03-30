@@ -17,6 +17,10 @@ and append the following line:
   ```
   addnode 162.243.37.30 onetry
   ```
+  
+  ![firstStart](/firstStart.png?raw=true "First Start")
+  
+  
 
 ### Reseting your environment, how to start over with the canonical blockchain data for testing:
 1. Make sure that all instances of hivemind (hivemindd, hivemind-cli and hivemind-qt) are completely shutdown

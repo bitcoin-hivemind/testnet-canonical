@@ -18,9 +18,12 @@ and append the following line:
   addnode 162.243.37.30 onetry
   ```
   
-  ![firstStart](/firstStart.png?raw=true "First Start")
+# Hivemind-Qt first start / tour
+Once you have started Hivemind-Qt for the first time, you should see something similar to this:
+![firstStart](/firstStart.png?raw=true "First Start")
   
-  
+After your node has downloaded the canonical testnet data, your Hivemind window should look something like this:
+![Synced](/synced.png?raw=true "Synced")
 
 ### Reseting your environment, how to start over with the canonical blockchain data for testing:
 1. Make sure that all instances of hivemind (hivemindd, hivemind-cli and hivemind-qt) are completely shutdown

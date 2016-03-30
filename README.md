@@ -28,7 +28,7 @@ After your node has downloaded the canonical testnet data, (you may need to rest
 To start creating Decisions & Markets visit the Author tab:
 ![Author](/author.png?raw=true "Author")
 
-The GUI is still in development so the best way to see more details about the Hivemind network is to make use of the RPC console. Hivemind has the following RPC commands available (in addition to the standard Bitcoin RPC commands):
+The GUI is still in development so the best way to see more details about the Hivemind network is to make use of the RPC console. Hivemind has the following RPC commands available in addition to the standard Bitcoin RPC commands:
 ```
 createbranch name description baselistingfee freedecisions targetdecisions maxdecisions mintradingfee tau ballottime unsealtime consensusthreshold
 createdecision branchid prompt address eventoverby [scaled min max]
@@ -55,7 +55,7 @@ listvotes branchid height
 Listing Branches:
 ![List Branches](/listBranches.png?raw=true "List Branches")
 
-Listing Decisions:
+Listing the Decisions on the Branch we just found:
 ![List Decisions](/listDecisions.png?raw=true "List Decisions")
 
 ### Reseting your environment, how to start over with the canonical blockchain data for testing:

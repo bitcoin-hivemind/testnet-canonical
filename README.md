@@ -25,6 +25,39 @@ When starting Hivemind for the first time you should see the green testnet logo.
 After your node has downloaded the canonical testnet data, (you may need to restart Hivemind-Qt), your Hivemind window should look something like this:
 ![Synced](/synced.png?raw=true "Synced")
 
+To start creating Decisions & Markets visit the Author tab:
+![Author](/author.png?raw=true "Author")
+
+The GUI is still in development so the best way to see more details about the Hivemind network is to make use of the RPC console. Hivemind has the following RPC commands available (in addition to the standard Bitcoin RPC commands):
+```
+createbranch name description baselistingfee freedecisions targetdecisions maxdecisions mintradingfee tau ballottime unsealtime consensusthreshold
+createdecision branchid prompt address eventoverby [scaled min max]
+createmarket address decisionid[,...] B tradingfee address title description tags[,...] maturation
+createrevealvote address branchid height NA decisionid,vote [...]
+createsealedvote branchid height voteid
+createstealvote branchid height voteid 
+createtrade address marketid buy_or_sell number_shares price decision_state [nonce]
+getballot branchid [height]
+getbranch branchid
+getcreatetradecapitalrequired marketid number_shares decision_state
+getdecision decisionid
+getmarket marketid
+getoutcome outcomeid
+gettrade tradeid
+getvote voteid
+listbranches
+listdecisions branchid
+listmarkets decisionid
+listoutcomes branchid
+listtrades marketid
+listvotes branchid height 
+```
+Listing Branches:
+![List Branches](/listBranches.png?raw=true "List Branches")
+
+Listing Decisions:
+![List Decisions](/listDecisions.png?raw=true "List Decisions")
+
 ### Reseting your environment, how to start over with the canonical blockchain data for testing:
 1. Make sure that all instances of hivemind (hivemindd, hivemind-cli and hivemind-qt) are completely shutdown
   ```

@@ -19,10 +19,10 @@ and append the following line:
   ```
   
 # Hivemind-Qt first start / tour
-Once you have started Hivemind-Qt for the first time, you should see something similar to this:
+When starting Hivemind for the first time you should see the green testnet logo. Hivemind will start connecting to the testnet sync nodes and begin syncing the blockchain automatically. Once your copy of the blockchain is up to date, the overview page will show a list of recent Hivemind transactions.
 ![firstStart](/firstStart.png?raw=true "First Start")
   
-After your node has downloaded the canonical testnet data, your Hivemind window should look something like this:
+After your node has downloaded the canonical testnet data, (you may need to restart Hivemind-Qt), your Hivemind window should look something like this:
 ![Synced](/synced.png?raw=true "Synced")
 
 ### Reseting your environment, how to start over with the canonical blockchain data for testing:

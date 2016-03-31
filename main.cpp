@@ -2754,7 +2754,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
     int nHeight = pindex->nHeight;
 
     // Don't accept any blocks higher than last block of canonical blockchain data
-    if (nHeight > 300) {
+    if (nHeight > 100) {
         return false;
     }
 

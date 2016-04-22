@@ -9,8 +9,7 @@
 #
 # TODO: loops & arrays
 
-
-ADDRESS='1AwXR5AFfR8PFCPB8cUDQpLF5CnkrsTZQC'
+ADDRESS='13nxGiTqgTkF5Ea7nnK8DV8uHyzkKnM72d'
 MAINBRANCH='0f894a25c5e0318ee148fe54600ebbf50782f0a1df1eb2aab06321a8ccec270d'
 
 echo "Populating the testnet blockchain with canonical info"
@@ -54,31 +53,31 @@ echo "Creating branches"
 #        "\n7. scaled min          (if scaled, numeric)"
 #        "\n8. scaled max          (if scaled, numeric)";
 echo "Creating decisions"
-DECISIONA=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will Barack Obama win US President in 2012?' 333 false false`
+DECISIONA=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will Barack Obama win US President in 2012?' 100 false false`
 DECISIONA=`echo $DECISIONA | jq '.decisionid'`
 echo "Decision A: $DECISIONA"
 
-DECISIONB=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will US FED abandon ZIRP, at any time in 2012?' 333 false false`
+DECISIONB=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will US FED abandon ZIRP, at any time in 2012?' 100 false false`
 DECISIONB=`echo $DECISIONB | jq '.decisionid'`
 echo "Decision B: $DECISIONB"
 
-DECISIONC=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will Jeff Immelt have been replaced, as CEO of GE, by Jan 1, 2013?' 333 false false`
+DECISIONC=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Will Jeff Immelt have been replaced, as CEO of GE, by Jan 1, 2013?' 100 false false`
 DECISIONC=`echo $DECISIONC | jq '.decisionid'`
 echo "Decision C: $DECISIONC"
 
-DECISIOND=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'US U-3 Unemployment Rate, in Dec 2012, latest revision, in % [3.0, 15.0] ?' 333 false true 3 15`
+DECISIOND=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'US U-3 Unemployment Rate, in Dec 2012, latest revision, in % [3.0, 15.0] ?' 100 false true 3 15`
 DECISIOND=`echo $DECISIOND | jq '.decisionid'`
 echo "Decision D: $DECISIOND"
 
-DECISIONE=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Global surface temperature anomaly, cumulative, reported by NASA, for year 2012 (J-D), in Celsius [ 0.3, 0.9 ] ?' 333 false true 0.3 0.9`
+DECISIONE=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Global surface temperature anomaly, cumulative, reported by NASA, for year 2012 (J-D), in Celsius [ 0.3, 0.9 ] ?' 100 false true 0.3 0.9`
 DECISIONE=`echo $DECISIONE | jq '.decisionid'`
 echo "Decision E: $DECISIONE"
 
-DECISIONF=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Stock price of GE, Jan 1, 2013, closing, in USD [1, 100]?' 333 false true 1 100`
+DECISIONF=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Stock price of GE, Jan 1, 2013, closing, in USD [1, 100]?' 100 false true 1 100`
 DECISIONF=`echo $DECISIONF | jq '.decisionid'`
 echo "Decision F: $DECISIONF"
 
-DECISIONG=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Bitcoin exchange rate as reported by CoinDesk BPI, Jan 8th, 2012, in USD [0.50, 50.00] ?' 333 false true 0.50, 50.00`
+DECISIONG=`./src/hivemind-cli createdecision $ADDRESS $MAINBRANCH 'Bitcoin exchange rate as reported by CoinDesk BPI, Jan 8th, 2012, in USD [0.50, 50.00] ?' 100 false true 0.50, 50.00`
 DECISIONG=`echo $DECISIONG | jq '.decisionid'`
 echo "Decision G: $DECISIONG"
 
@@ -106,23 +105,33 @@ echo "Decision G: $DECISIONG"
 #        "\n    :X2   X^2"
 #        "\n    :X3   X^3"
 #        "\n    :LNX  LN(X)";
+
+# Add results
+DECISIONA=""
+DECISIONB=""
+DECISIONC=""
+DECISIOND=""
+DECISIONE=""
+DECISIONF=""
+DECISIONG=""
+
 echo "Creating markets"
-MARKET1=`./src/hivemind-cli createmarket $ADDRESS $DECISIONA:X1 0.1 0.1 0.1 "Presidential Election" "Marketed based on Presidential Election" "tags" 400 0 1`
+MARKET1=`./src/hivemind-cli createmarket $ADDRESS $DECISIONA:X1 0.1 0.1 0.1 "Presidential Election" "Marketed based on Presidential Election" "tags" 100 0 1`
 MARKET1=`echo $MARKET1 | jq '.marketid'`
 echo "Market 1: $MARKET1"
-MARKET2=`./src/hivemind-cli createmarket $ADDRESS $DECISIONE:X1 0.1 0.1 0.1 "Global warming health indicator" "Market to serve as a meter of global warming health" "tags" 400 0 1`
+MARKET2=`./src/hivemind-cli createmarket $ADDRESS $DECISIONE:X1 0.1 0.1 0.1 "Global warming health indicator" "Market to serve as a meter of global warming health" "tags" 100 0 1`
 MARKET2=`echo $MARKET2 | jq '.marketid'`
 echo "Market 2: $MARKET2"
-MARKET3=`./src/hivemind-cli createmarket $ADDRESS $DECISIONA:X1,$DECISIONG:X1 0.1 0.1 0.1 "InTrade simulator, USD election betting" "USD election betting" "tags" 400 0 1`
+MARKET3=`./src/hivemind-cli createmarket $ADDRESS $DECISIONA:X1,$DECISIONG:X1 0.1 0.1 0.1 "InTrade simulator, USD election betting" "USD election betting" "tags" 100 0 1`
 MARKET3=`echo $MARKET3 | jq '.marketid'`
 echo "Market 3: $MARKET3"
-MARKET4=`./src/hivemind-cli createmarket $ADDRESS $DECISIONA:X1,$DECISIONB:X1,$DECISIOND:X1 0.1 0.1 0.1 "Unemployment drivers" "Market on unemployment" "tags" 400 0 1`
+MARKET4=`./src/hivemind-cli createmarket $ADDRESS $DECISIONA:X1,$DECISIONB:X1,$DECISIOND:X1 0.1 0.1 0.1 "Unemployment drivers" "Market on unemployment" "tags" 100 0 1`
 MARKET4=`echo $MARKET4 | jq '.marketid'`
 echo "Market 4: $MARKET4"
-MARKET5=`./src/hivemind-cli createmarket $ADDRESS $DECISIOND:X1,$DECISIOND:X2 0.1 0.1 0.1 "Unemployment standard deviation" "Market on unemployment standard deviation" "tags" 400 0 1`
+MARKET5=`./src/hivemind-cli createmarket $ADDRESS $DECISIOND:X1,$DECISIOND:X2 0.1 0.1 0.1 "Unemployment standard deviation" "Market on unemployment standard deviation" "tags" 100 0 1`
 MARKET5=`echo $MARKET5 | jq '.marketid'`
 echo "Market 5: $MARKET5"
-MARKET6=`./src/hivemind-cli createmarket $ADDRESS $DECISIONC:X1,$DECISIONF:LNX 0.1 0.1 0.1 "Fire Immelt?" "Market on the employment of GE CEO Immelt" "tags" 400 0 1`
+MARKET6=`./src/hivemind-cli createmarket $ADDRESS $DECISIONC:X1,$DECISIONF:LNX1 0.1 0.1 0.1 "Fire Immelt?" "Market on the employment of GE CEO Immelt" "tags" 100 0 1`
 MARKET6=`echo $MARKET6 | jq '.marketid'`
 echo "Market 6: $MARKET6"
 
@@ -143,15 +152,15 @@ echo "Market 6: $MARKET6"
 #        "\n"
 #        "\nNote: for repeated trades, increase the nonce.";
 echo "Creating trades"
-./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
-./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
-./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
-./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
-./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
-./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
-./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
-./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
-./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
-./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
-./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
-./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
+#./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
+#./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
+#./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
+#./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
+#./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
+#./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
+#./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
+#./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
+#./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
+#./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0
+#./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 buy 1 0 0
+#./src/hivemind-cli createtrade $ADDRESS 926827a6d80340d5c810239eeecc624c68c68ef495a2278017302b4a5c8322e5 sell 1 0 0

@@ -89,7 +89,7 @@ Testnet sync nodes for bitcoin-hivemind are full nodes modified to accept a cert
  - Editing main.cpp in your code, adding the following to the AcceptBlock function after line 2751:
   ```
   // Don't accept any blocks higher than last block of canonical blockchain data
-  if (nHeight > 100) {
+  if (nHeight > 279) {
       return false;
   }
   ```

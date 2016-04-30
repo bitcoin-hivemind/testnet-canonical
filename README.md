@@ -29,15 +29,12 @@ To start creating Decisions & Markets visit the Author tab:
 ![Author](/author.png?raw=true "Author")
 
 To vote on Decisions, use the Vote tab:
-
-
-Submitting a sealed vote:
 ![SealedVote](/SealedVote.png?raw=true "SealedVote")
 
 Click on the "Select Decision" button to select and auto fill the Decision ID field:
 ![SelectDecision](/SelectDecision.png?raw=true "SelectDecision")
 
-Once your vote has been submitted, the txid and voteid will be displayed in a success message. If any errors occur an error message will be displayed instead. 
+Once your vote has been submitted, the txid and voteid will be displayed. If any errors occur an error message will be displayed instead. 
 ![SealedVoteSubmitted](/SealedVoteSubmitted.png?raw=true "SealedVoteSubmitted")
 
 Submitting a revealed vote:

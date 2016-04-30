@@ -29,10 +29,19 @@ To start creating Decisions & Markets visit the Author tab:
 ![Author](/author.png?raw=true "Author")
 
 To vote on Decisions, use the Vote tab:
+
+
+Submitting a sealed vote:
 ![SealedVote](/SealedVote.png?raw=true "SealedVote")
-![RevealVote](/RevealVote.png?raw=true "RevealVote")
+
+Click on the "Select Decision" button to select and auto fill the Decision ID field:
 ![SelectDecision](/SelectDecision.png?raw=true "SelectDecision")
+
+Once your vote has been submitted, the txid and voteid will be displayed in a success message. If any errors occur an error message will be displayed instead. 
 ![SealedVoteSubmitted](/SealedVoteSubmitted.png?raw=true "SealedVoteSubmitted")
+
+Submitting a revealed vote:
+![RevealVote](/RevealVote.png?raw=true "RevealVote")
 ![RevealVoteSubmitted](/RevealVoteSubmitted.png?raw=true "RevealVoteSubmitted")
 
 The GUI is still in development so the best way to see more details about the Hivemind network is to make use of the RPC console. Hivemind has the following RPC commands available in addition to the standard Bitcoin RPC commands:

@@ -28,6 +28,13 @@ After your node has downloaded the canonical testnet data, (you may need to rest
 To start creating Decisions & Markets visit the Author tab:
 ![Author](/author.png?raw=true "Author")
 
+To vote on Decisions, use the Vote tab:
+![SealedVote](/SealedVote.png?raw=true "SealedVote")
+![SealedVote](/SealedVote.png?raw=true "SealedVote")
+
+
+
+
 The GUI is still in development so the best way to see more details about the Hivemind network is to make use of the RPC console. Hivemind has the following RPC commands available in addition to the standard Bitcoin RPC commands:
 ```
 createbranch name description baselistingfee freedecisions targetdecisions maxdecisions mintradingfee tau ballottime unsealtime consensusthreshold
